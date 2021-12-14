@@ -1,0 +1,27 @@
+package $base_package$.api.$entity_package$;
+
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+import javax.persistence.*;
+$imports$
+
+@Entity
+@Table(name = "$entity$")
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
+class $class$ {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "$entity$_generator")
+    @SequenceGenerator(name = "$entity$_generator", sequenceName = "$entity$_id_seq", allocationSize = 1)
+    @Column(updatable = false, nullable = false)
+    private Integer id;
+
+$attributes$
+
+}
